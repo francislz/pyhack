@@ -24,4 +24,17 @@ class Portscan():
             else:
                 print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Port " + str(port) + f" {Fore.RED}CLOSED{Style.RESET_ALL} in " + self.address)
         client_s.close()
-            
+
+    @staticmethod     
+    def menu():
+        print("")
+        address = input("IP/URL: ")
+        port_message = "Type your port in one of the following formats: \n\n"
+        port_message += "80 \t\t=> Only one port \n"
+        port_message += "80 - 100 \t=> Port Range\n"
+        port_message += "[80, 443, 22] \t=> List of ports\n\n"
+        port_message += "Ports: "
+
+        ports = input(port_message)
+
+        Portscan(address=address, ports=ports).scan()
