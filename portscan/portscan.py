@@ -21,7 +21,7 @@ class Portscan():
             status = client_s.connect_ex((self.address, int(port)))
             if(status == 0):
                 print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Port " + str(port) + f" {Fore.GREEN}OPENED{Style.RESET_ALL} in " + self.address)
-            else:
-                print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Port " + str(port) + f" {Fore.RED}CLOSED{Style.RESET_ALL} in " + self.address)
+            # else:
+            #     print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Port " + str(port) + f" {Fore.RED}CLOSED{Style.RESET_ALL} in " + self.address)
         client_s.close()
             
